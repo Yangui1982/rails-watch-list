@@ -1,10 +1,13 @@
+
+<div class="container">
+  <h1>My Lists</h1>
+</div>
 <br>
-<br>
-<h1>Lists</h1>
-<br>
-<ul>
-<% @lists.each do |list| %>
-  <li><%= link_to list.name, list %></li>
-      <% end  %>
-</ul>
-<%= link_to 'Add a List', new_list_path %>
+<div class="container">
+  <ul>
+    <% @lists.each do |list| %>
+      <li><%= link_to list.name, list %></li>
+          <% end  %>
+  </ul>
+</div>
+<!-- <%= link_to 'Add a List', new_list_path %> -->

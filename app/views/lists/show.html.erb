@@ -1,16 +1,37 @@
 <br>
 <br>
-<h1>List</h1>
-<%= @list.name %>
-
-<ul>
-  <% @list.bookmarks.each do |bookmark| %>
-    <li> <%= bookmark.movie.title %> : <%= bookmark.comment %>
-    <%= link_to 'Delete', bookmark_path(bookmark),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-    </li>
-  <% end %>
-</ul>
-
-<%= link_to 'Add a bookmark', new_list_bookmark_path(@list) %>
+<div class="container">
+  <h1>List</h1>
+</div>
+<div>
+  <h2><%= @list.name %></h2>
+</div>
+<div class="container">
+  <ul>
+    <% @list.bookmarks.each do |bookmark| %>
+      <li>
+        <div class="card-trip">
+          <%= image_tag bookmark.movie.poster_url %>
+          <div class="info">
+            <div class="card-trip-infos">
+              <div>
+                <h2><%= bookmark.movie.title %></h2>
+                <p><%= bookmark.comment %></p>
+                <%= link_to bookmark_path(bookmark),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do%>
+                  <i class="fa-regular fa-trash-can"></i>
+                  <% end %>
+              </div>
+            </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div class="container">
+  <%= link_to new_list_bookmark_path(@list) do %>
+  <i class="fa-solid fa-plus"></i>
+     Add a Bookmark
+     <% end %>
+</div>

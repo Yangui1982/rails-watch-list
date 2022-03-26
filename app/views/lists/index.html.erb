@@ -1,20 +1,27 @@
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.radiofrance.fr/s3/cruiser-production/2020/12/5b5a3d8d-9654-4ebb-9a99-5f8e6169c6c6/838_gettyimages-108387402.jpg);">
-      <div class="container">
-      <h1>Do your own Movies Lists!</h1>
-      <p>Categorize your Movies</p>
-      </div>
-    </div>
-
-<div class="container">
-  <h1>My Lists</h1>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://fr.web.img3.acsta.net/newsv7/21/12/27/19/55/3679527.jpg);">
+  <div class="container">
+    <h1>Do your own Movies Lists!</h1>
+    <p>Categorize your Movies</p>
+  </div>
 </div>
-<br>
-<div class="container">
-  <ul>
-    <% @lists.each do |list| %>
-      <li><%= link_to list.name, list %></li>
-          <% end  %>
-  </ul>
+
+<div class="container list">
+  <div class="container">
+    <h1>My Lists</h1>
+  </div>
+  <br>
+  <div class="container">
+    <ul>
+      <% @lists.each do |list| %>
+        <li>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('list_background.jpg') %>)">
+            <h2><%= link_to list.name, list %></h2>
+          </div>
+        </li>
+      <% end  %>
+
+    </ul>
+  </div>
 </div>
 <!-- <%= link_to 'Add a List', new_list_path %> -->

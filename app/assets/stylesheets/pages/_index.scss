@@ -2,10 +2,9 @@
 @import "home";
 
 .banner {
-  height: auto;
-  object-fit: cover;
   background-size: cover;
-  background-position: center;
+  background-position: bottom;
+  border-radius: 8px;
   padding: 150px 0;
   margin-bottom: 30px;
 }
@@ -23,4 +22,22 @@
   color: white;
   opacity: .7;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+ul {
+  list-style-type: none;
+}
+
+.list {
+  border-radius: 10px;
+  background-color: #D1D1E9;
+  padding-bottom: 30px;
+}
+
+a {
+  color: #0C163B;
+  text-decoration: none;
+}
+
+.info {
+  padding-left: 10px;
 }

@@ -1,2 +1,11 @@
 @import "home";
 @import "index";
+
+body {
+  background-color: white;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap
+}

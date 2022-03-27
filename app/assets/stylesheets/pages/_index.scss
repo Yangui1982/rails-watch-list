@@ -25,6 +25,13 @@
 }
 ul {
   list-style-type: none;
+  padding: none;
+}
+
+h2 {
+  margin-top: 10px;
+  color: #D1D1E9;
+  text-align: center;
 }
 
 .list {
@@ -33,11 +40,34 @@ ul {
   padding-bottom: 30px;
 }
 
+.lists {
+  display: flex;
+  flex-wrap: wrap;
+  width: 1350px;
+}
+
 a {
-  color: #0C163B;
+  color: whitesmoke;
   text-decoration: none;
+}
+
+.trash {
+  text-align:right;
+  padding-right: 10px;
+  padding-top: 110px;
 }
 
 .info {
   padding-left: 10px;
+}
+
+.card-category {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 200px;
+  width: 350px;
+  border-radius: 20px;
+  margin: 30px;
+  background-size: cover;
 }

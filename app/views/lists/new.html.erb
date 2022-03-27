@@ -1,7 +1,13 @@
 <br>
 <br>
-<h1>List Creation</h1>
-
-<%= render 'form', list: @list %>
-
-<%= link_to 'Back', lists_path %>
+<div class="container new">
+  <div class="container title">
+    <h1>List Creation</h1>
+  </div>
+  <div class="container form">
+    <%= render 'form', list: @list %>
+  </div>
+  <div class="back">
+    <%= link_to 'Back', lists_path, class: 'backlink' %>
+  </div>
+</div>

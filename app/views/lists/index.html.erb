@@ -11,22 +11,21 @@
     <h1>My Lists</h1>
   </div>
   <br>
-  <div class="container">
     <ul>
-      <% @lists.each do |list| %>
-        <li>
-          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('list_background.jpg') %>)">
-            <h2><%= link_to list.name, list %></h2>
-            <%= link_to list_path(list),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } do%>
-                  <i class="fa-regular fa-trash-can"></i>
-                  <% end %>
-          </div>
-        </li>
-      <% end  %>
-
+      <div class="lists">
+        <% @lists.each do |list| %>
+          <li>
+            <div class="card-category card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= list.photo.attached? ? cl_image_path(list.photo.key) : asset_path('list_background.jpg') %>)">
+              <h2><%= link_to list.name, list %></h2>
+              <%= link_to list_path(list), class: 'trash',
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } do%>
+                    <i class="fa-regular fa-trash-can"></i>
+                    <% end %>
+            </div>
+          </li>
+        <% end  %>
+      </div>
     </ul>
-  </div>
 </div>
 <!-- <%= link_to 'Add a List', new_list_path %> -->

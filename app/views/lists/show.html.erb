@@ -16,7 +16,8 @@
               <%= image_tag bookmark.movie.poster_url %>
               <div class="card-trip-infos">
                 <div class="info">
-                  <h2><%= bookmark.movie.title %></h2>
+                  <h2><%= bookmark.movie.title %> <%= bookmark.movie.rating %></h2>
+
                   <p><%= bookmark.comment %></p>
                   <%= link_to bookmark_path(bookmark),
                     method: :delete,

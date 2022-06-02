@@ -8,7 +8,7 @@
     <h2><%= @list.name %></h2>
   </div>
   <div class="container">
-    <ul>
+    <ul class="list">
       <div class="container cards">
         <% @list.bookmarks.each do |bookmark| %>
           <li>
@@ -16,9 +16,15 @@
               <%= image_tag bookmark.movie.poster_url %>
               <div class="card-trip-infos">
                 <div class="info">
-                  <h2><%= bookmark.movie.title %> <%= bookmark.movie.rating %></h2>
-
-                  <p><%= bookmark.comment %></p>
+                  <div class="movie-info">
+                    <h2><%= bookmark.movie.title %> <i class="fa-solid fa-circle", style="font-size: 5px; color: grey"></i>
+                        <%= bookmark.movie.rating %> <i class="fa-solid fa-star", style="color: gold"></i> </h2>
+                    <p><%= bookmark.movie.overview %></p>
+                  </div>
+                  <br>
+                  <div class="comment">
+                    <h6><i class="fa-solid fa-quote-left"> </i><%= bookmark.comment %></h6>
+                  </div>
                   <%= link_to bookmark_path(bookmark),
                     method: :delete,
                     data: { confirm: "Are you sure?" } do%>

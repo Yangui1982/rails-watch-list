@@ -5,9 +5,30 @@ body {
   background-color: white;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  }
+
 .cards {
   display: flex;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card-trip{
+  width: 540px;
+  height: 540px;
+  background-color: whitesmoke;
+  margin-right: 44px;
+}
+
+.movie-info{
+  color: grey;
+  border-bottom: 1px solid grey;
+  text-align: justify;
+  padding-right: 5px;
 }
 
 .add {
@@ -24,11 +45,15 @@ body {
 }
 
 .info p {
-  padding-left: 10px;
+  padding: 10px;
+}
+
+.comment {
+  color: black;
 }
 
 .info a {
-  padding-left: 310px;
+  padding-left: 500px;
   color: black;
 
 }

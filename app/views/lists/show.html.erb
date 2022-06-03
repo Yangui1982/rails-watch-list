@@ -15,22 +15,30 @@
             <div class="card-trip">
               <%= image_tag bookmark.movie.poster_url %>
               <div class="card-trip-infos">
-                <div class="info">
-                  <div class="movie-info">
-                    <h2><%= bookmark.movie.title %> <i class="fa-solid fa-circle", style="font-size: 5px; color: grey"></i>
-                        <%= bookmark.movie.rating %> <i class="fa-solid fa-star", style="color: gold"></i> </h2>
-                    <p><%= bookmark.movie.overview %></p>
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                      <button class="accordion-button movie-info" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        More
+                      </button>
+                    </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <h2><%= bookmark.movie.title %> <i class="fa-solid fa-circle", style="font-size: 5px; color: grey"></i>
+                          <%= bookmark.movie.rating.round(2) %> <i class="fa-solid fa-star", style="color: gold"></i> </h2>
+                          <p><%= bookmark.movie.overview %></p>
+                    </div>
                   </div>
-                  <br>
-                  <div class="comment">
-                    <h6><i class="fa-solid fa-quote-left"> </i><%= bookmark.comment %></h6>
-                  </div>
-                  <%= link_to bookmark_path(bookmark),
-                    method: :delete,
-                    data: { confirm: "Are you sure?" } do%>
-                    <i class="fa-regular fa-trash-can"></i>
-                    <% end %>
                 </div>
+                <br>
+                <div class="comment">
+                  <h6><i class="fa-solid fa-quote-left"> </i><%= bookmark.comment %></h6>
+                </div>
+                <%= link_to bookmark_path(bookmark),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } do%>
+                  <i class="fa-regular fa-trash-can"></i>
+                  <% end %>
               </div>
             </div>
           </li>
@@ -42,6 +50,6 @@
 <div class="container add">
   <%= link_to new_list_bookmark_path(@list) do %>
   <i class="fa-solid fa-plus"></i>
-     Add a Bookmark
+     Add a Movie
      <% end %>
 </div>

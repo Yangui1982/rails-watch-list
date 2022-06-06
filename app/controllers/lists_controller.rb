@@ -6,6 +6,11 @@ class ListsController < ApplicationController
   def show
     @list = List.find(params[:id])
     @bookmark = Bookmark.new
+    @review = Review.new(list: @list)
+    @reviews = Review.all
+    @list.reviews.each do |review|
+      @reviews << Review.find_by(id: review)
+    end
   end
 
   def new
